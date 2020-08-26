@@ -73,8 +73,8 @@ export function createMediaMatcher<T>(breakPoints: MediaRulesOf<T>): MediaMatche
         <Media queries={breakPoints}>
           {(matches) => {
             const value: BoolOf<T> = state || {
-              ...notNulls(matches),
               ...(parentMatch || {}),
+              ...notNulls(matches),
             };
             return <MediaContext.Provider
               value={value}
